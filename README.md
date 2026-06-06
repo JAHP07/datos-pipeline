@@ -49,7 +49,7 @@ Los siguientes gráficos se generan actualmente y se guardan en reports/plots/:
 
    python src/analisis.py
 
-Los gráficos se guardarán en reports/plots/. Revisa logs en consola para mensajes y estadísticas descriptivas.
+Los gráficos se guardarán en reportes/plots/. Revisa logs en consola para mensajes y estadísticas descriptivas.
 
 ## Buenas prácticas
 - No versionar datos sensibles ni grandes binarios; si necesitas versionar artefactos, considera usar un tag o release.
