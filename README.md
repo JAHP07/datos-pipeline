@@ -71,7 +71,7 @@ Después de la ejecución:
 
 ---
 
-## 🗂️ Estructura del Repositorio.
+🗂️ Estructura del Repositorio.
 
 datos-pipeline/
 │
