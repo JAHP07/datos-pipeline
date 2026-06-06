@@ -1,7 +1,7 @@
 # 📊 Pipeline de Datos de Ventas
 
 [![Python 3.8+](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
-[![Pandas](https://img.shields.io/badge/Pandas-2.0-red)](https://pandas.pydata.org/)
+[![Pandas](https://img.shields.io/badge/Pandas-3.0.1-red)](https://pandas.pydata.org/)
 [![SQLite](https://img.shields.io/badge/SQLite-3-green)](https://www.sqlite.org/)
 [![Matplotlib](https://img.shields.io/badge/Matplotlib-3.5-orange)](https://matplotlib.org/)
 
