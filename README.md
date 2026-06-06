@@ -33,7 +33,7 @@ Pipeline ETL completo que **simula un proceso real de análisis de datos de vent
 
 | Herramienta     | Propósito                          |
 |----------------|------------------------------------|
-| Python 3.8+    | Lenguaje principal                 |
+| Python          | Lenguaje principal                 |
 | Pandas          | Manipulación y análisis de datos   |
 | SQLite3         | Base de datos relacional ligera    |
 | Matplotlib      | Visualización de resultados        |
