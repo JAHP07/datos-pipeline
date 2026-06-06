@@ -1,97 +1,67 @@
-# 📊 Pipeline de Datos de Ventas
+# datos-pipeline
 
-[![Python 3.14](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
-[![Pandas](https://img.shields.io/badge/Pandas-3.0.1-red)](https://pandas.pydata.org/)
-[![SQLite 3.50+](https://img.shields.io/badge/SQLite-3-green)](https://www.sqlite.org/)
-[![Matplotlib 3.10](https://img.shields.io/badge/Matplotlib-3.5-orange)](https://matplotlib.org/)
+Proyecto para análisis y transformación de datos orientado a generar informes y visualizaciones reproducibles.
 
-Pipeline ETL completo que **simula un proceso real de análisis de datos de ventas**. Extrae datos generados aleatoriamente, los transforma aplicando limpieza, agregaciones con SQL y Python, y genera informes visuales y tabulares.
+## Historia
 
-> ✅ habilidades en **Python, Pandas, SQL, automatización y visualización de datos**.
+Este repositorio nació como ejercicio para construir una canalización de datos simple que:
+- Ingesta datos desde SQLite
+- Ejecuta transformaciones y análisis descriptivo
+- Genera gráficos EDA para facilitar la interpretación
 
----
+A lo largo del tiempo se añadieron scripts para automatizar el EDA y emitir reportes visuales que soporten decisiones analíticas.
 
-## 🚀 ¿Qué hace este pipeline?
+## Arquitectura
 
-1. **Genera** un dataset simulado de ventas (productos, categorías, precios, cantidades).
-2. **Limpia y transforma** los datos:
-   - Elimina registros duplicados.
-   - Filtra valores atípicos.
-   - Calcula columnas derivadas (ingresos totales, mes de venta, etc.).
-3. **Carga** los datos limpios a una base SQLite.
-4. **Ejecuta consultas SQL** para obtener:
-   - Ventas por categoría.
-   - Top 5 productos más vendidos.
-   - Evolución mensual de ingresos.
-5. **Genera reportes**:
-   - Tablas en CSV.
-   - Gráficos de barras y líneas guardados en `/reportes/plots`.
+La arquitectura es intencionalmente simple y modular:
 
----
+- src/: Código fuente principal
+  - src/analisis.py — Script principal de análisis y generación de gráficos (EDA)
+  - src/utils.py — Utilidades compartidas (si aplica)
+- data/: Ubicación esperada para orígenes de datos (no versionado)
+- reports/: Salida de reportes y gráficos
+  - reports/plots/ — Gráficos PNG generados por analisis.py
+- README.md — Documentación del proyecto
 
-## 🛠️ Tecnologías utilizadas
+Flujo de trabajo:
+1. Extraer datos desde la fuente (SQLite por defecto)
+2. Ejecutar src/analisis.py para producir estadísticas y gráficos
+3. Versionar los artefactos relevantes (scripts y resúmenes); los gráficos se pueden versionar si procede
 
-| Herramienta     | Propósito                          |
-|----------------|------------------------------------|
-| Python          | Lenguaje principal                 |
-| Pandas          | Manipulación y análisis de datos   |
-| SQLite3         | Base de datos relacional ligera    |
-| Matplotlib      | Visualización de resultados        |
-| Random / Faker  | Generación de datos simulados      |
+## Gráficos generados (ejemplo)
+Los siguientes gráficos se generan actualmente y se guardan en reports/plots/:
+- 01_distribuciones.png — Distribuciones univariantes de las variables clave
+- 02_ingreso_categoria.png — Ingreso por categoría
+- 03_serie_temporal.png — Serie temporal de métricas agregadas
+- 04_correlaciones.png — Matriz de correlaciones
+- 05_boxplot.png — Boxplots por categoría
+- 06_dispersion.png — Scatter plots para pares seleccionados
+- 07_region_categoria.png — Comparaciones por región y categoría
 
+## Cómo ejecutar el análisis y regenerar gráficos
 
----
+1. Asegurarse de tener las dependencias (recomendado crear un entorno virtual):
 
-## ⚙️ Cómo ejecutarlo.
+   python -m venv .venv
+   source .venv/bin/activate
+   pip install -r requirements.txt  # si existe
 
-```bash
-# 1. Clonar el repositorio
-git clone https://github.com/JAHP07/datos-pipeline.git
-cd datos-pipeline
+2. Ejecutar el script de análisis:
 
-# 2. Crear un entorno virtual (opcional pero recomendado)
-python -m venv venv
-source venv/bin/activate   # En Windows: venv\Scripts\activate
+   python src/analisis.py
 
-# 3. Instalar dependencias
-pip install -r requirements.txt
+Los gráficos se guardarán en reports/plots/. Revisa logs en consola para mensajes y estadísticas descriptivas.
 
-# 4. Ejecutar el pipeline completo
-python main.py
+## Buenas prácticas
+- No versionar datos sensibles ni grandes binarios; si necesitas versionar artefactos, considera usar un tag o release.
+- Mantener el código de análisis reproducible: registrar versiones de dependencias y semilla aleatoria cuando aplique.
 
+## Contribuir
+1. Abrir un issue describiendo la propuesta
+2. Crear una rama con el prefijo feat/ o fix/
+3. Hacer un PR con descripción clara del cambio
 
-Después de la ejecución:
-
-1. **Los datos limpios estarán en data/ventas_limpias.csv**
-
-2. **Los reportes tabulares en /reportes/*.csv**
-
-3. **Los gráficos en /reportes/plots/**
+## Licencia
+Este repositorio no especifica una licencia por defecto. Añadir LICENSE si se requiere uso público.
 
 
----
-
-🗂️ Estructura del Repositorio.
-
-datos-pipeline/
-│
-├── main.py                        ← Ejecuta el pipeline completo
-├── requirements.txt               ← Dependencias
-├── .gitignore
-│
-├── src/
-│   ├── generar_datos.py           ← Genera dataset sintético
-│   ├── base_de_datos.py           ← Fase 1: SQL + SQLite
-│   ├── limpieza.py                ← Fases 2–3: Pandas + features
-│   ├── analisis.py                ← Fase 4: EDA + 7 gráficos
-│   └── exportar.py                ← Fase 6: CSV, Excel, JSON
-│
-├── data/
-│   ├── raw/                       ← CSV de entrada
-│   └── processed/pipeline.db     ← Base de datos SQLite
-│
-└── reportes/
-    ├── ventas_gold.csv            ← Dataset listo para Power BI
-    ├── reporte_ejecutivo.xlsx     ← Excel multi-hoja
-    ├── metricas.json              ← KPIs del último run
-    └── plots/                     ← 7 gráficos PNG del EDA
