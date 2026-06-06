@@ -39,3 +39,22 @@ Pipeline ETL completo que **simula un proceso real de análisis de datos de vent
 | Matplotlib      | Visualización de resultados        |
 | Random / Faker  | Generación de datos simulados      |
 
+
+---
+
+## ⚙️ Cómo ejecutarlo (para reclutadores o cualquier persona)
+
+```bash
+# 1. Clonar el repositorio
+git clone https://github.com/JAHP07/datos-pipeline.git
+cd datos-pipeline
+
+# 2. Crear un entorno virtual (opcional pero recomendado)
+python -m venv venv
+source venv/bin/activate   # En Windows: venv\Scripts\activate
+
+# 3. Instalar dependencias
+pip install -r requirements.txt
+
+# 4. Ejecutar el pipeline completo
+python main.py
