@@ -17,10 +17,9 @@ La arquitectura es intencionalmente simple y modular:
 
 - src/: Código fuente principal
   - src/analisis.py — Script principal de análisis y generación de gráficos (EDA)
-  - src/utils.py — Utilidades compartidas (si aplica)
 - data/: Ubicación esperada para orígenes de datos (no versionado)
-- reports/: Salida de reportes y gráficos
-  - reports/plots/ — Gráficos PNG generados por analisis.py
+- reportes/: Salida de reportes y gráficos
+  - reportes/plots/ — Gráficos PNG generados por analisis.py
 - README.md — Documentación del proyecto
 
 Flujo de trabajo:
