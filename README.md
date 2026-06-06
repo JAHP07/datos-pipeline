@@ -68,3 +68,30 @@ Después de la ejecución:
 
 3. **Los gráficos en /reportes/plots/**
 
+
+---
+
+## 🗂️ Estructura del Repositorio.
+
+datos-pipeline/
+│
+├── main.py                        ← Ejecuta el pipeline completo
+├── requirements.txt               ← Dependencias
+├── .gitignore
+│
+├── src/
+│   ├── generar_datos.py           ← Genera dataset sintético
+│   ├── base_de_datos.py           ← Fase 1: SQL + SQLite
+│   ├── limpieza.py                ← Fases 2–3: Pandas + features
+│   ├── analisis.py                ← Fase 4: EDA + 7 gráficos
+│   └── exportar.py                ← Fase 6: CSV, Excel, JSON
+│
+├── data/
+│   ├── raw/                       ← CSV de entrada
+│   └── processed/pipeline.db     ← Base de datos SQLite
+│
+└── reportes/
+    ├── ventas_gold.csv            ← Dataset listo para Power BI
+    ├── reporte_ejecutivo.xlsx     ← Excel multi-hoja
+    ├── metricas.json              ← KPIs del último run
+    └── plots/                     ← 7 gráficos PNG del EDA
