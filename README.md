@@ -7,7 +7,7 @@
 
 Pipeline ETL completo que **simula un proceso real de análisis de datos de ventas**. Extrae datos generados aleatoriamente, los transforma aplicando limpieza, agregaciones con SQL y Python, y genera informes visuales y tabulares.
 
-> ✅ Diseñado para demostrar habilidades en **Python, Pandas, SQL, automatización y visualización de datos**.
+> ✅ habilidades en **Python, Pandas, SQL, automatización y visualización de datos**.
 
 ---
 
