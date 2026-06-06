@@ -1,0 +1,22 @@
+{
+  "dataset": {
+    "total_registros": 5000,
+    "fecha_desde": "2023-01-01 00:00:00",
+    "fecha_hasta": "2024-01-01 00:00:00"
+  },
+  "ingresos": {
+    "total_clp": 11243695.79,
+    "promedio_pedido": 2248.74,
+    "maximo_pedido": 9219.37
+  },
+  "rentabilidad": {
+    "ganancia_total_clp": 4789389.48,
+    "margen_promedio_pct": 42.62,
+    "mejor_categoria": "Hogar",
+    "region_top_ingreso": "Oeste"
+  },
+  "calidad": {
+    "valores_atipicos": 101,
+    "pedidos_premium": 3336
+  }
+}
