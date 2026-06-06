@@ -1,9 +1,9 @@
 # 📊 Pipeline de Datos de Ventas
 
-[![Python 3.8+](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
+[![Python 3.14](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
 [![Pandas](https://img.shields.io/badge/Pandas-3.0.1-red)](https://pandas.pydata.org/)
-[![SQLite](https://img.shields.io/badge/SQLite-3-green)](https://www.sqlite.org/)
-[![Matplotlib](https://img.shields.io/badge/Matplotlib-3.5-orange)](https://matplotlib.org/)
+[![SQLite 3.50+](https://img.shields.io/badge/SQLite-3-green)](https://www.sqlite.org/)
+[![Matplotlib 3.10](https://img.shields.io/badge/Matplotlib-3.5-orange)](https://matplotlib.org/)
 
 Pipeline ETL completo que **simula un proceso real de análisis de datos de ventas**. Extrae datos generados aleatoriamente, los transforma aplicando limpieza, agregaciones con SQL y Python, y genera informes visuales y tabulares.
 
