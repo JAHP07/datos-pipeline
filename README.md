@@ -42,7 +42,7 @@ Pipeline ETL completo que **simula un proceso real de análisis de datos de vent
 
 ---
 
-## ⚙️ Cómo ejecutarlo (para reclutadores o cualquier persona)
+## ⚙️ Cómo ejecutarlo.
 
 ```bash
 # 1. Clonar el repositorio
@@ -58,3 +58,13 @@ pip install -r requirements.txt
 
 # 4. Ejecutar el pipeline completo
 python main.py
+
+
+Después de la ejecución:
+
+1. **Los datos limpios estarán en data/ventas_limpias.csv**
+
+2. **Los reportes tabulares en /reportes/*.csv**
+
+3. **Los gráficos en /reportes/plots/**
+
