@@ -39,6 +39,3 @@ Pipeline ETL completo que **simula un proceso real de análisis de datos de vent
 | Matplotlib      | Visualización de resultados        |
 | Random / Faker  | Generación de datos simulados      |
 
----
-
-## 📂 Estructura del proyecto
